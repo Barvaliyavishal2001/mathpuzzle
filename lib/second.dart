@@ -64,7 +64,8 @@ class _second_pagState extends State<second_pag> {
               )),
               Expanded(child: Container(
                 height: 50,width: 200,
-                decoration: BoxDecoration(border:Border.all(color: Color(0xfffffff))),
+                decoration: BoxDecoration(border:Border.all(color: Color(
+                    0xfbb2a2a))),
               )),
             ],),
           )),
