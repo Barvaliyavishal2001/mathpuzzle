@@ -117,19 +117,29 @@ class _second_pageState extends State<second_page> {
                       ),
                     )),
                     Expanded(
-                        child: GestureDetector(onTapDown: (details) {
-                          t1=true;
+                        child: GestureDetector(
+                          onTapDown: (details) {
+                          setState(() {
+                            t1=true;
+                          });
                         },onTapCancel: () {
-                          t1 = false;
+                          setState(() {
+                            t1 = false;
+                          });
                         },
                           onTapUp: (details) {
-                            t1 = false;
+                            setState(() {
+                              t1 = false;
+                            });
                           },
                           child: Container(
+                            height: 35,
+                            width: 60,
                             alignment: Alignment.center,
                             margin: EdgeInsets.only(right: 3),
                             decoration: BoxDecoration(
-                                border: Border.all(width: 2, color: (t1 == true)?Colors.white:Colors.black)),
+                                border: Border.all(width: 4, color: (t1 == true)?Colors.white:Colors.black,),
+                                borderRadius:BorderRadius.circular(6) ),
                             child: Text(
                               "SUMBIT",
                               style: TextStyle(

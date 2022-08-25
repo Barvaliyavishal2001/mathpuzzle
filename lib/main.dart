@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mathpuzzle/second_page.dart';
+import 'package:mathpuzzle/thred_page.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -59,7 +60,7 @@ class _puzzleState extends State<puzzle> {
                         },
                         onTapUp: (details) {
                           setState(() {
-                            t1 = true;
+                            t1 = false;
                             Navigator.push(context, MaterialPageRoute(builder: (context) {
                               return second_page();
                             },));
@@ -93,7 +94,10 @@ class _puzzleState extends State<puzzle> {
                         },
                         onTapUp: (details) {
                           setState(() {
-                            t2 = true;
+                            t2 = false;
+                            Navigator.push(context, MaterialPageRoute(builder: (context) {
+                              return thred_page();
+                            },));
                           });
                         },
                         onTapCancel: () {
@@ -104,10 +108,8 @@ class _puzzleState extends State<puzzle> {
                         child: Container(
                           margin: EdgeInsets.only(top: 5, bottom: 5),
                           decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 4,
-                                color:
-                                    (t2 == true) ? Colors.white : Colors.black),
+                            border: Border.all(width: 4,
+                                color:(t2 == true) ? Colors.white : Colors.black),
                             borderRadius: BorderRadius.all(Radius.circular(8)),
                           ),
                           child: Text(" PUZZLES ",
@@ -125,7 +127,7 @@ class _puzzleState extends State<puzzle> {
                         },
                         onTapUp: (details) {
                           setState(() {
-                            t3 = true;
+                            t3 = false;
 
                           });
                         },
